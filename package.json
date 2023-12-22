@@ -1,0 +1,21 @@
+{
+  "name": "create-catonaut",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "bin": {
+    "create-catonaut": "./src/index.js"
+  },
+  "scripts": {
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}' '!dist/**' '!node_modules/**'"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^9.2.12",
+    "isomorphic-git": "^1.25.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1"
+  }
+}
