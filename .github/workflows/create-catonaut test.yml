@@ -1,9 +1,6 @@
 name: Test-create-catonaut
 
-on:
-  push:
-    branches:
-      - '*'
+on: push
 
 jobs:
   build-and-test:
