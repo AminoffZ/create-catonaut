@@ -3,7 +3,19 @@ name: Test-create-catonaut
 on:
   push:
     branches:
-      - 'ci/cd'
+      - '*'
+
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+      - '**.yml'
+      - '**.json'
+
+  workflow_run:
+    workflows: ['dependabot']
+    types:
+      - completed
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -19,6 +31,9 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+
+      - name: set as executable
+        run: chmod +x ./src/index.js
 
       - name: Run Tests
         run: npm run test

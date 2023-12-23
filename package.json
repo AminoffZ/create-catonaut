@@ -6,7 +6,7 @@
     "create-catonaut": "./src/index.js"
   },
   "scripts": {
-    "test": "./src/index.js testApp",
+    "test": "sudo ./src/index.js testApp",
     "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}' '!dist/**' '!node_modules/**'"
   },
   "license": "MIT",
