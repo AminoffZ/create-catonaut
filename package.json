@@ -6,6 +6,7 @@
     "create-catonaut": "./src/index.js"
   },
   "scripts": {
+    "test": "",
     "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}' '!dist/**' '!node_modules/**'"
   },
   "license": "MIT",
@@ -16,6 +17,9 @@
     "isomorphic-git": "^1.25.1"
   },
   "devDependencies": {
-    "prettier": "^3.1.1"
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "prettier": "^3.1.1",
+    "sinon": "^17.0.1"
   }
 }
