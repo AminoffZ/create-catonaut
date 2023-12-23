@@ -3,7 +3,7 @@ name: Test-create-catonaut
 on:
   push:
     branches:
-      - '*'
+      - 'ci/cd'
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
