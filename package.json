@@ -6,20 +6,17 @@
     "create-catonaut": "./src/index.js"
   },
   "scripts": {
-    "test": "mochi",
+    "test": "./src/index.js testApp",
     "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}' '!dist/**' '!node_modules/**'"
   },
   "license": "MIT",
   "dependencies": {
     "commander": "^11.1.0",
     "fs-extra": "^11.2.0",
-    "inquirer": "^9.2.12",
+    "inquirer": "^8.0.0",
     "isomorphic-git": "^1.25.1"
   },
   "devDependencies": {
-    "chai": "^4.3.10",
-    "mocha": "^10.2.0",
-    "prettier": "^3.1.1",
-    "sinon": "^17.0.1"
+    "prettier": "^3.1.1"
   }
 }

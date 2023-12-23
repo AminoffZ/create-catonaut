@@ -2,7 +2,7 @@
 const { program } = require('commander');
 const fsExtra = require('fs-extra');
 const path = require('path');
-
+const inquirer = require('inquirer');
 const { clone } = require('isomorphic-git');
 const http = require('isomorphic-git/http/node');
 const fs = require('fs/promises');
@@ -56,17 +56,17 @@ async function updatePackageName(destinationPath) {
       '\x1b[0m'
     );
   } catch (error) {
-    throw new Error(
-      '\x1b[31m\u2717 Error updating package.json: ' +
-        error.message +
+    console.error(
+      '\x1b[31m\u2717 Error updating package.json: ',
+        error.message,
         ' \x1b[0m'
     );
+process.exit(1);
   }
 }
 
 async function createProject(appName) {
   if (!appName) {
-    const inquirer = await import('inquirer');
     const { name } = await inquirer.prompt([
       {
         type: 'input',
@@ -86,7 +86,6 @@ async function createProject(appName) {
 
   const repositoryUrl = 'https://github.com/AminoffZ/catonaut.git';
   const destinationPath = path.join(process.cwd(), appName);
-
   try {
     await cloneRepository(repositoryUrl, destinationPath);
     await updatePackageName(destinationPath);
