@@ -4,15 +4,6 @@ on:
   push:
     branches:
       - '*'
-  pull_request:
-    paths:
-      - '.github/workflows/**'
-      - '**.yml'
-      - '**.json'
-  workflow_run:
-    workflows: ['dependabot']
-    types:
-      - completed
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
