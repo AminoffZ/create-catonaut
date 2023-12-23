@@ -5,12 +5,6 @@ on:
     branches:
       - '*'
 
-  pull_request:
-    paths:
-      - '.github/workflows/**'
-      - '**.yml'
-      - '**.json'
-
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
