@@ -3,7 +3,7 @@ name: Publish-create-catonaut
 on:
   workflow_run:
     workflows:
-      - Test-create-catonaut
+      - test-create-catonaut
     branches: [main]
     types:
       - completed
