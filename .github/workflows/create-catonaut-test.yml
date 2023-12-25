@@ -29,7 +29,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: set as executable
+      - name: Set as executable
         run: chmod +x ./src/index.js
 
       - name: Run Tests
