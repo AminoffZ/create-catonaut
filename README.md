@@ -7,12 +7,19 @@
 Create-Catonaut is a command-line tool designed to streamline the process of creating new applications with [Catonaut](https://github.com/AminoffZ/catonaut). This CLI automates setup and configuration, allowing you to concentrate on building your remarkable projects.
 
 ## Catonaut Guide
+
 Explore the full potential of [Catonaut](https://github.com/AminoffZ/catonaut) by visiting the official repository.
 
 ## Usage
 
 ```bash
 npx create-catonaut [AppName]
+```
+
+OR
+
+```bash
+npm create catonaut [AppName]
 ```
 
 Replace [AppName] with the desired name for your catonaut application.
