@@ -2,15 +2,26 @@
 const { program } = require('commander');
 const fsExtra = require('fs-extra');
 const path = require('path');
-
+const inquirer = require('inquirer');
 const { clone } = require('isomorphic-git');
 const http = require('isomorphic-git/http/node');
 const fs = require('fs/promises');
 
+// Emoji constants
+const CHECK_MARK = '✅';
+const CROSS_MARK = '❌';
+const WARNING = '⚠️';
+
+// Color constants
+const GREEN = '\x1b[32m';
+const RED = '\x1b[31m';
+const MAGENTA = '\x1b[35m';
+const RESET_COLOR = '\x1b[0m';
+
 program
   .version('1.0.0')
+  .description('A command-line tool for starting new catonaut apps.')
   .arguments('[appName]')
-  .description('Create a new catonaut app')
   .action(createProject);
 
 program.parse(process.argv);
@@ -27,15 +38,13 @@ async function cloneRepository(repositoryUrl, destinationPath) {
     });
 
     console.log(
-      '\x1b[32m\u2713 Successfully created a new app:',
-      path.basename(destinationPath),
-      '\x1b[0m'
+      `${GREEN}${CHECK_MARK} Successfully created a new app: ${path.basename(
+        destinationPath
+      )}${RESET_COLOR}`
     );
   } catch (error) {
     console.error(
-      '\x1b[31m\u2717 Error cloning repository:',
-      error.message,
-      '\x1b[0m'
+      `${RED}${CROSS_MARK} Error cloning repository: ${error.message}${RESET_COLOR}`
     );
     process.exit(1);
   }
@@ -51,22 +60,20 @@ async function updatePackageName(destinationPath) {
     await fsExtra.writeJson(packageJsonPath, packageJson, { spaces: 2 });
 
     console.log(
-      '\x1b[32m\u2714 Updated package.json for',
-      path.basename(destinationPath),
-      '\x1b[0m'
+      `${GREEN}${CHECK_MARK} Updated package.json for ${path.basename(
+        destinationPath
+      )}${RESET_COLOR}`
     );
   } catch (error) {
-    throw new Error(
-      '\x1b[31m\u2717 Error updating package.json: ' +
-        error.message +
-        ' \x1b[0m'
+    console.error(
+      `${RED}${CROSS_MARK} Error updating package.json: ${error.message}${RESET_COLOR}`
     );
+    process.exit(1);
   }
 }
 
 async function createProject(appName) {
   if (!appName) {
-    const inquirer = await import('inquirer');
     const { name } = await inquirer.prompt([
       {
         type: 'input',
@@ -79,24 +86,25 @@ async function createProject(appName) {
     appName = name.trim();
 
     if (!appName) {
-      console.error('\x1b[31m\u2717 App name cannot be empty. Exiting.\x1b[0m');
+      console.error(
+        `${RED}${CROSS_MARK} App name cannot be empty. Exiting.${RESET_COLOR}`
+      );
       process.exit(1);
     }
   }
 
   const repositoryUrl = 'https://github.com/AminoffZ/catonaut.git';
   const destinationPath = path.join(process.cwd(), appName);
-
   try {
     await cloneRepository(repositoryUrl, destinationPath);
     await updatePackageName(destinationPath);
     console.log(
-      '\x1b[35m\u0021 Your new app is ready in',
-      path.basename(destinationPath),
-      '\x1b[0m'
+      `${MAGENTA}🎉 Your new app is ready in ${path.basename(
+        destinationPath
+      )}${RESET_COLOR}`
     );
   } catch (error) {
-    console.error('\x1b[31m', error.message, '\x1b[0m');
+    console.error(`${RED}${WARNING} ${error.message}${RESET_COLOR}`);
     process.exit(1);
   }
 }
