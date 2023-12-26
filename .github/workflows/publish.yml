@@ -42,7 +42,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci
           npm install -g create-catonaut
 
       - name: Making sure our published package actually works
