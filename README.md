@@ -17,4 +17,6 @@ npx create-catonaut [AppName]
 
 Replace [AppName] with the desired name for your catonaut application.
 
-Executing this command generates the necessary files and sets up your catonaut application.
+If you don't provide the AppName, you'll be prompted to enter it.
+
+Executing this command generates the necessary files and sets up your Catonaut application, allowing you to kickstart your development journey effortlessly. Start building, and let Catonaut handle the rest!
