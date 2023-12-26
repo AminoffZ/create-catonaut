@@ -20,8 +20,8 @@ const RESET_COLOR = '\x1b[0m';
 
 program
   .version('1.0.0')
+  .description('A command-line tool for starting new catonaut apps.')
   .arguments('[appName]')
-  .description('Create a new catonaut app')
   .action(createProject);
 
 program.parse(process.argv);
@@ -86,7 +86,9 @@ async function createProject(appName) {
     appName = name.trim();
 
     if (!appName) {
-      console.error(`${RED}${CROSS_MARK} App name cannot be empty. Exiting.${RESET_COLOR}`);
+      console.error(
+        `${RED}${CROSS_MARK} App name cannot be empty. Exiting.${RESET_COLOR}`
+      );
       process.exit(1);
     }
   }
@@ -97,7 +99,9 @@ async function createProject(appName) {
     await cloneRepository(repositoryUrl, destinationPath);
     await updatePackageName(destinationPath);
     console.log(
-      `${MAGENTA}🎉 Your new app is ready in ${path.basename(destinationPath)}${RESET_COLOR}`
+      `${MAGENTA}🎉 Your new app is ready in ${path.basename(
+        destinationPath
+      )}${RESET_COLOR}`
     );
   } catch (error) {
     console.error(`${RED}${WARNING} ${error.message}${RESET_COLOR}`);
