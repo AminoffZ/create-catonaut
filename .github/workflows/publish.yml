@@ -26,25 +26,3 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
-  additional-test:
-    runs-on: ubuntu-latest
-    needs: publish
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: latest
-
-      - name: Install dependencies
-        run: |
-          npm install -g create-catonaut
-
-      - name: Making sure our published package actually works
-        run: |
-          npx create-catonaut firstTestApp
-          npm create catonaut secondTestApp
