@@ -2,6 +2,10 @@
 
 [![test-create-catonaut](https://github.com/AminoffZ/create-catonaut/actions/workflows/create-catonaut-test.yml/badge.svg)](https://github.com/AminoffZ/create-catonaut/actions/workflows/create-catonaut-test.yml)
 
+[![publish-create-catonaut](https://github.com/AminoffZ/create-catonaut/actions/workflows/publish.yml/badge.svg)](https://github.com/AminoffZ/create-catonaut/actions/workflows/publish.yml)
+
+[![npm version](https://img.shields.io/npm/v/create-catonaut)](https://www.npmjs.com/package/create-catonaut)
+
 <img src="https://github.com/AminoffZ/catonaut/blob/main/public/assets/images/icon128.png?raw=true" align="right" width="128" height="128" title="catonaut">
 
 Create-Catonaut is a command-line tool designed to streamline the process of creating new applications with [Catonaut](https://github.com/AminoffZ/catonaut). This CLI automates setup and configuration, allowing you to concentrate on building your remarkable projects.
