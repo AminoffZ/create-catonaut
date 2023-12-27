@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "./src/index.js testApp",
-    "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}' '!dist/**' '!node_modules/**'"
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md,yml}' '**/**/*.{js,jsx,ts,tsx,json,md,yml}' '!dist/**' '!node_modules/**'"
   },
   "license": "MIT",
   "dependencies": {
