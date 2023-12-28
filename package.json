@@ -1,6 +1,6 @@
 {
   "name": "create-catonaut",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "src/index.js",
   "bin": {
     "create-catonaut": "./src/index.js"
