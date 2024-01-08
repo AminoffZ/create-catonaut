@@ -15,8 +15,8 @@ dependencies:
     specifier: ^8.0.0
     version: 8.2.6
   isomorphic-git:
-    specifier: ^1.25.1
-    version: 1.25.2
+    specifier: ^1.25.3
+    version: 1.25.3
 
 devDependencies:
   prettier:
@@ -243,8 +243,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /isomorphic-git@1.25.2:
-    resolution: {integrity: sha512-GHMZVujE76NpZ7Za0Kus/46J6Y7UZsY+xcHMLnFHqvcGbJzkXB1LQCzpYaRq+xQinWGdkcjBDQoE+8Tv3StPCg==}
+  /isomorphic-git@1.25.3:
+    resolution: {integrity: sha512-iUaDB5kObupWpwjQ+EGkDQmaYQzbq1XaPqo+xJCCfbPViGZL94rU2RvK4EDJKpYbyiwbq5OSLEjkXHa8r5I1aw==}
     engines: {node: '>=12'}
     hasBin: true
     dependencies:
