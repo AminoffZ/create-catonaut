@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  chalk:
+    specifier: ^4.1.2
+    version: 4.1.2
   commander:
     specifier: ^11.1.0
     version: 11.1.0
@@ -12,16 +15,16 @@ dependencies:
     specifier: ^11.2.0
     version: 11.2.0
   inquirer:
-    specifier: ^8.0.0
+    specifier: ^8.2.6
     version: 8.2.6
   isomorphic-git:
-    specifier: ^1.25.1
-    version: 1.25.2
+    specifier: ^1.25.3
+    version: 1.25.3
 
 devDependencies:
   prettier:
-    specifier: ^3.1.1
-    version: 3.1.1
+    specifier: ^3.2.2
+    version: 3.2.2
 
 packages:
 
@@ -243,8 +246,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /isomorphic-git@1.25.2:
-    resolution: {integrity: sha512-GHMZVujE76NpZ7Za0Kus/46J6Y7UZsY+xcHMLnFHqvcGbJzkXB1LQCzpYaRq+xQinWGdkcjBDQoE+8Tv3StPCg==}
+  /isomorphic-git@1.25.3:
+    resolution: {integrity: sha512-iUaDB5kObupWpwjQ+EGkDQmaYQzbq1XaPqo+xJCCfbPViGZL94rU2RvK4EDJKpYbyiwbq5OSLEjkXHa8r5I1aw==}
     engines: {node: '>=12'}
     hasBin: true
     dependencies:
@@ -347,8 +350,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /prettier@3.1.1:
-    resolution: {integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==}
+  /prettier@3.2.2:
+    resolution: {integrity: sha512-HTByuKZzw7utPiDO523Tt2pLtEyK7OibUD9suEJQrPUCYQqrHr74GGX6VidMrovbf/I50mPqr8j/II6oBAuc5A==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true

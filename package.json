@@ -1,23 +1,24 @@
 {
   "name": "create-catonaut",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "src/index.js",
   "bin": {
     "create-catonaut": "./src/index.js"
   },
   "scripts": {
     "test": "./src/index.js testApp",
-    "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}' '!dist/**' '!node_modules/**'"
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md,yml}' '**/**/*.{js,jsx,ts,tsx,json,md,yml}' '!dist/**' '!node_modules/**'"
   },
   "license": "MIT",
   "dependencies": {
+    "chalk": "^4.1.2",
     "commander": "^11.1.0",
     "fs-extra": "^11.2.0",
-    "inquirer": "^8.0.0",
-    "isomorphic-git": "^1.25.1"
+    "inquirer": "^8.2.6",
+    "isomorphic-git": "^1.25.3"
   },
   "devDependencies": {
-    "prettier": "^3.1.1"
+    "prettier": "^3.2.2"
   },
   "files": [
     "src/*",

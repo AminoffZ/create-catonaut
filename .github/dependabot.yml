@@ -1,8 +1,8 @@
 version: 2
 updates:
-
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
+    target-branch: 'v*.*.*'
     schedule:
       # Check for updates to GitHub Actions every week
-      interval: "weekly"
+      interval: 'weekly'
