@@ -113,3 +113,5 @@ function createProject(appName) {
       process.exit(1);
     });
 }
+
+export { cloneRepository, updatePackageName };
