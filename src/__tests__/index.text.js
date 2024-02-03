@@ -31,10 +31,11 @@ describe('cloneRepository', () => {
 describe('updatePackageName', () => {
   test('updates the package name in package.json', async () => {
     const originalPackageJson = {
-      name: 'package.json',
+      name: 'catonaut',
     };
 
-    const packageJsonPath = '/tmp/new-app/';
+    const newPackageName = 'new-name';
+    const packageJsonPath = '/tmp/new-app/package.json';
 
     // mock implementation
     const mockReadJson = jest.fn(() => originalPackageJson);
@@ -45,12 +46,12 @@ describe('updatePackageName', () => {
       writeJson: mockWriteJson,
     }));
 
-    await updatePackageName(packageJsonPath);
+    await updatePackageName('/tmp/new-app'); // Pass the correct path
 
-    expect(mockReadJson).toHaveBeenCalledWith(packageJsonPath + 'package.json');
+    expect(mockReadJson).toHaveBeenCalledWith(packageJsonPath);
     expect(mockWriteJson).toHaveBeenCalledWith(
       packageJsonPath,
-      expect.objectContaining({ name: path.basename('/tmp/new-app') }),
+      expect.objectContaining({ name: 'new-app' }), // Updated expectation
       { spaces: 2 }
     );
   });
