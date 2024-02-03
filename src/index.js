@@ -114,4 +114,4 @@ function createProject(appName) {
     });
 }
 
-export { cloneRepository, updatePackageName };
+module.exports = { cloneRepository, updatePackageName };
