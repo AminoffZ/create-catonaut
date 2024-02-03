@@ -34,6 +34,7 @@ describe('updatePackageName', () => {
       name: 'original-name',
     };
 
+    const newPackageName = 'new-name';
     const packageJsonPath = '/tmp/new-app/package.json';
 
     // mock implementation
@@ -41,7 +42,6 @@ describe('updatePackageName', () => {
     const mockWriteJson = jest.fn();
 
     jest.mock('fs-extra', () => ({
-      ensureDir: jest.fn(),
       readJson: mockReadJson,
       writeJson: mockWriteJson,
     }));

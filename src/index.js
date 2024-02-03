@@ -51,8 +51,7 @@ function updatePackageName(destinationPath) {
   const packageJsonPath = path.join(destinationPath, 'package.json');
 
   return fsExtra
-    .ensureDir(destinationPath)
-    .then(() => fsExtra.readJson(packageJsonPath))
+    .readJson(packageJsonPath)
     .then((packageJson) => {
       packageJson.name = path.basename(destinationPath);
       return fsExtra.writeJson(packageJsonPath, packageJson, { spaces: 2 });
