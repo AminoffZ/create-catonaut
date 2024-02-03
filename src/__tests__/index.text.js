@@ -31,10 +31,10 @@ describe('cloneRepository', () => {
 describe('updatePackageName', () => {
   test('updates the package name in package.json', async () => {
     const originalPackageJson = {
-      name: 'catonaut',
+      name: 'original-name',
     };
 
-    const newPackageName = 'new-name';
+    const newPackageName = 'new-app';
     const packageJsonPath = '/tmp/new-app/package.json';
 
     // mock implementation
@@ -51,7 +51,7 @@ describe('updatePackageName', () => {
     expect(mockReadJson).toHaveBeenCalledWith(packageJsonPath);
     expect(mockWriteJson).toHaveBeenCalledWith(
       packageJsonPath,
-      expect.objectContaining({ name: 'new-app' }), // Updated expectation
+      expect.objectContaining({ name: newPackageName }), // Corrected expectation
       { spaces: 2 }
     );
   });
